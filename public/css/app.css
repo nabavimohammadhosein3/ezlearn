@@ -1,0 +1,18 @@
+@import url(button.css);
+@import url(logo.css);
+@import url(navbar.css);
+
+* {
+    transition: 0.5s;
+    text-decoration: none !important;
+}
+:root {
+    --purple: rgb(150, 0, 255);
+    --purple-l: rgb(192, 104, 255);
+    --purple-a: rgba(176, 65, 255, 0.5);
+    --purple-d: rgb(100, 1, 171);
+    --pink: rgb(225, 0, 255);
+    --pink-l: rgb(239, 114, 255);
+    --pink-a: rgba(232, 61, 255, 0.5);
+    --pink-d: rgb(174, 0, 174);
+}

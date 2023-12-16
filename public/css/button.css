@@ -1,0 +1,51 @@
+.btn-app-purple {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--purple);
+    --bs-btn-border-color: var(--purple);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--purple);
+    --bs-btn-hover-border-color: var(--purple);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--purple-d);
+    --bs-btn-active-border-color: var(--purple-d);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--purple-l);
+    --bs-btn-disabled-border-color: var(--purple-l);
+    --color-a: var(--purple-a);
+}
+.btn-app-pink {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--pink);
+    --bs-btn-border-color: var(--pink);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--pink);
+    --bs-btn-hover-border-color: var(--pink);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--pink-d);
+    --bs-btn-active-border-color: var(--pink-d);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--pink-l);
+    --bs-btn-disabled-border-color: var(--pink-l);
+    --color-a: var(--pink-a);
+}
+.btn {
+    --bs-btn-border-radius: 50px;
+    outline: transparent solid 0px !important;
+    transition: outline 0.1s, background-color 0.3s !important;
+}
+.btn:hover {
+    outline-offset: 2px !important;
+    outline: var(--color-a) solid 4px !important;
+    transition: outline 0.1s, background-color 0.3s !important;
+}
+.btn:focus {
+    border-color: var(--bs-btn-active-border-color);
+    background-color: var(--bs-btn-active-bg);
+    outline-offset: 2px !important;
+    outline: var(--color-a) solid 4px !important;
+    transition: outline 0.1s, background-color 0.3s !important;
+}

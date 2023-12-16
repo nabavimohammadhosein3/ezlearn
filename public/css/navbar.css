@@ -1,0 +1,48 @@
+/* links */
+.nav-link {
+    border-bottom: 3px solid transparent;
+    margin-bottom: 1px;
+}
+.active {
+    border-bottom: 3px solid var(--purple);
+}
+
+/* search box */
+@media only screen and (min-width: 992px) {
+    form[role="search"] {
+        width: 50%;
+    }
+}
+nav form button {
+    left: 9px;
+}
+.form-control {
+    outline: transparent solid 0px !important;
+    transition: outline 0.1s, background-color 0.3s !important;
+}
+.form-control:focus {
+    box-shadow: none;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 0.25rem var(--pink-a);
+    border-color: transparent;
+    transition: outline 0.1s, background-color 0.3s !important;
+}
+
+/* user profile drop down */
+.nav-user {
+    border-bottom: 2px solid transparent;
+}
+.nav-user:hover {
+    border-bottom: 2px solid var(--purple);
+}
+.dropdown-menu {
+    --bs-dropdown-link-active-bg: var(--pink-d);
+    --bs-dropdown-link-hover-bg: var(--pink-d);
+    --bs-dropdown-link-hover-color: white;
+    margin-top: 10px !important;
+    left: 0px !important;
+    right: auto !important;
+}
+.dropdown-item {
+    transition: 0.2s;
+}
