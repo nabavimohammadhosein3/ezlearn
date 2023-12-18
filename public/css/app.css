@@ -1,18 +1,44 @@
 @import url(button.css);
 @import url(logo.css);
 @import url(navbar.css);
+@import url(package.css);
 
 * {
     transition: 0.5s;
     text-decoration: none !important;
 }
 :root {
-    --purple: rgb(150, 0, 255);
+    --purple-rgb: 150, 0, 255;
+    --purple: rgb(var(--purple-rgb));
     --purple-l: rgb(192, 104, 255);
     --purple-a: rgba(176, 65, 255, 0.5);
     --purple-d: rgb(100, 1, 171);
-    --pink: rgb(225, 0, 255);
+    --pink-rgb: 225, 0, 255;
+    --pink: rgb(var(--pink-rgb));
     --pink-l: rgb(239, 114, 255);
     --pink-a: rgba(232, 61, 255, 0.5);
     --pink-d: rgb(174, 0, 174);
+}
+a {
+    --bs-link-hover-color-rgb: var(--purple-rgb);
+}
+footer {
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.25);
+}
+/* app content margins in Y */
+.header-margin {
+    margin-top: 65px;
+}
+.footer-margin {
+    margin-bottom: 265px;
+}
+
+/* inputs */
+.form-control {
+    transition: outline 0.1s, background-color 0.3s, box-shadow 0.3s !important;
+}
+.form-control:focus {
+    border-color: var(--bs-border-color);
+    box-shadow: 0 0 0 0.25rem var(--pink-a);
+    transition: outline 0.1s, background-color 0.3s, box-shadow 0.3s !important;
 }

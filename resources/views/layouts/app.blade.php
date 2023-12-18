@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="rtl">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="rtl" class="position-relative">
 
 <head>
     <meta charset="utf-8">
@@ -45,25 +45,37 @@
     </header>
 
     <!-- Page Content -->
-    <main class="min-h-screen">
-        <div class="" style="height: 100vh">
-            <div class="container py-4">
-
+    <main class="">
+        @if (isset($welcome))
+        <div class="" style="height: 200px">
+            <div class="container">
+                {{ $welcome }}
             </div>
         </div>
-        <div class="mt-5 min-h-screen bg-white ">
-            <div class="container py-4">
+        @endif
+        @if (isset($window))
+        <div class="bg-white header-margin">
+            <div class="container p-3">
+                {{ $window }}
+            </div>
+        </div>
+        @else
+        <div class="header-margin bg-transparent">
+            <div class="container p-3 bg-white rounded-4">
                 {{ $slot }}
             </div>
         </div>
+        @endif
     </main>
 
+    <div style="height: 265px;"></div>
+
     <!-- Page Footer -->
-    @if (isset($footer))
-    <footer>
-        {{ $footer }}
+    <footer class="bg-white position-absolute w-100 bottom-0" style="height: 200px">
+        <div class="container p-3">
+            @include('layouts.footer')
+        </div>
     </footer>
-    @endif
 
     {{-- jquery --}}
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
