@@ -1,4 +1,66 @@
 <x-app-layout>
+    @if (isset($group))
+    <div class="w-100 d-flex justify-around items-center flex-wrap">
+        <h1 class="fs-4 px-3 m-0 mx-3 my-2">{{ $group->name }}</h1>
+        <div class="dropdown">
+            <button class="link-dark dropdown-toggle rounded-3 fw-bold px-3 py-2 mx-3 my-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                مرتب سازی
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'price']) }}">ارزان ترین</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'price desc']) }}">گران ترین</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'total_time']) }}">بیشترین زمان دوره</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'total_time desc']) }}">کمترین زمان دوره</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'id desc']) }}">جدید ترین</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'id']) }}">قدیمی ترین</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'level']) }}">پایین ترین سطح</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'level desc']) }}">بالا ترین سطح</a></li>
+            </ul>
+        </div>
+        <div class="d-flex justify-between items-center flex-wrap mx-3">
+        @foreach ($group->children as $i)
+        <a class="fs-5 px-2 mx-1 g-links border-3 text-nowrap" href="{{route('group.show', ['group' => $i->name])}}">{{ $i->name }}</a>
+        @endforeach
+        </div>
+    </div>
+    <hr class="mb-4">
+    @endif
+    @if (isset(request()->q))
+    <div class="w-100 d-flex items-center flex-wrap">
+        <div class="dropdown">
+            <button class="link-dark dropdown-toggle rounded-3 fw-bold px-3 py-2 mx-3 my-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                مرتب سازی
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'price']) }}">ارزان ترین</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'price desc']) }}">گران ترین</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'total_time']) }}">بیشترین زمان دوره</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'total_time desc']) }}">کمترین زمان دوره</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'id desc']) }}">جدید ترین</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'id']) }}">قدیمی ترین</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'level']) }}">پایین ترین سطح</a></li>
+                <li><a class="dropdown-item"
+                    href="{{ request()->fullUrlWithQuery(['sort' => 'level desc']) }}">بالا ترین سطح</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr class="mb-4">
+    @endif
     @foreach ($packages as $package)
     <div class="card mb-3 overflow-hidden">
         <div class="d-flex flex-col flex-lg-row">
@@ -16,7 +78,7 @@
                     <p class="card-text">{{ Str::limit($package->description, 150) }}</p>
                     <p class="card-text mt-auto">
                         <small class="text-body-secondary">
-                            {{ $package->updated_at->diffForHumans() }}
+                            آخرین بروزرسانی {{ $package->updated_at->diffForHumans() }}
                         </small>
                     </p>
                 </div>
@@ -24,6 +86,9 @@
         </div>
     </div>
     @endforeach
-    <hr class="my-4">
-    {{ $packages->links() }}
+    @if (count($packages) == 0)
+        <div class=" text-center w-100">هیچ دوره آموزشی با این محدودیت ها وجود ندارد ...</div>
+    @endif
+        <hr class="my-4">
+        {{ $packages->withQueryString()->links() }}
 </x-app-layout>

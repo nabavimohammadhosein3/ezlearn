@@ -15,9 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->text('description');
+            $table->text('learning_titles')->nullable();
+            $table->unsignedSmallInteger('total_time')->nullable();
+            $table->unsignedTinyInteger('level');
+            $table->unsignedInteger('price')->default(0);
+            $table->unsignedTinyInteger('discount')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id', 'package_user')->references('id')->on('users')->cascadeOnDelete();
             $table->string('slug')->unique();
+            $table->unsignedTinyInteger('group_id')->nullable();
+            $table->foreign('group_id', 'package_group')->references('id')->on('groups')->nullOnDelete();
             $table->timestamps();
         });
     }

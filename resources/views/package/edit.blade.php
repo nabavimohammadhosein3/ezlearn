@@ -5,8 +5,11 @@
         @method('put')
         <div class="mb-3">
             <label for="title" class="form-label">عنوان</label>
-            <input name="title" type="text" class="form-control rounded-5 bg-body-secondary w-75" id="title"
+            <input name="title" type="text" class="form-control rounded-5 bg-body-secondary w-75 @error('title')border-danger @enderror" id="title"
                 value="{{ old('title',$package->title) }}">
+            @error('title')
+                <p class="alert alert-danger p-2 w-75 rounded-5" dir="ltr">{{ $message }}</p>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">توضیحات</label>

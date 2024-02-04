@@ -28,10 +28,10 @@ nav form[role="search"] button {
     --bs-dropdown-link-active-bg: var(--pink-d);
     --bs-dropdown-link-hover-bg: var(--pink-d);
     --bs-dropdown-link-hover-color: white;
-    margin-top: 10px !important;
-    left: 0px !important;
-    right: auto !important;
 }
 .dropdown-item {
     transition: 0.2s;
+}
+.dropdown-hover:hover > .dropdown-menu {
+    display: block;
 }

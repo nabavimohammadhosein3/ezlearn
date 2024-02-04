@@ -42,3 +42,9 @@ footer {
     box-shadow: 0 0 0 0.25rem var(--pink-a);
     transition: outline 0.1s, background-color 0.3s, box-shadow 0.3s !important;
 }
+.g-links {
+    border-color: transparent;
+}
+.g-links:hover {
+    border-bottom-color: var(--purple-l);
+}

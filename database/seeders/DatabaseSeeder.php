@@ -6,19 +6,24 @@ namespace Database\Seeders;
 
 use App\Models\Package;
 use App\Models\User;
+use App\Models\Group;
 use Illuminate\Database\Seeder;
+use Database\Seeders\GroupSeeder;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
+        // Group::create([
+        //     'name' => 'test',
+        //     'parent_id' => 3,
         // ]);
+
         // Package::factory(20)->create();
         // User::factory(3)->create();
+        // $this->call([
+        //     GroupSeeder::class
+        // ]);
     }
 }
