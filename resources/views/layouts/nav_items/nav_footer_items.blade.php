@@ -1,14 +1,8 @@
-<li class="nav-item d-flex gap-3 ">
+<li class="nav-item">
     <a class="nav-link mt-2 
     @if (strpos(Request::path(), 'dashboard' ) !== false)
         active
     @endif" href="{{route('dashboard')}}">داشبورد</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link mt-2 
-    @if (strpos(Request::path(), 'contact' ) !== false)
-        active
-    @endif" href="{{route('dashboard')}}">تماس با ما</a>
 </li>
 <li class="nav-item">
     <div class="dropdown">
@@ -52,4 +46,10 @@
             @endforeach
         </ul>
     </div>
+</li>
+<li class="nav-item">
+    <a class="nav-link mt-2 
+    @if (strpos(Request::path(), 'contact' ) !== false)
+        active
+    @endif" href="{{route('contact_us')}}">تماس با ما</a>
 </li>

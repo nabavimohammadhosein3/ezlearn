@@ -18,9 +18,9 @@
     <!-- bootstrap and fontawesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         body {
@@ -40,7 +40,7 @@
     </header>
 
     <!-- Page Content -->
-    <main class="">
+    <main class="mb-5">
         @if (isset($welcome))
         <div class="" style="height: 200px">
             <div class="container">
@@ -63,10 +63,11 @@
         @endif
     </main>
 
-    <div style="height: 265px;"></div>
 
     <!-- Page Footer -->
-    <footer class="bg-white position-absolute w-100 bottom-0" style="height: 200px">
+    <div class="" style="height: 170px">
+    </div>
+    <footer class="bg-white w-100 bottom-0 position-absolute">
         <div class="container p-3">
             @include('layouts.footer')
         </div>
@@ -77,7 +78,9 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     {{-- bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- app_scripts --}}
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/animations.js') }}"></script>
 </body>
 
 </html>

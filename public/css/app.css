@@ -2,6 +2,7 @@
 @import url(logo.css);
 @import url(navbar.css);
 @import url(package.css);
+@import url(animations.css);
 
 * {
     transition: 0.5s;

@@ -9,6 +9,11 @@
     width: 60px;
     transition: 0.75s;
 }
+.ezlearn-w {
+    background-image: linear-gradient(90deg, var(--purple) 45%, var(--pink) 50%, var(--purple) 60%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 @media only screen and (min-width: 992px) {
     .logo:hover .ezlearn {
         width: 100px;

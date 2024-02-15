@@ -1,6 +1,10 @@
 <x-app-layout>
-    خوش آمدید
-    <x-slot name='footer'>
-        پایین صفحه
-    </x-slot>
+    <div class="w-100 text-center h1 ezlearn-w">
+        EZLearn
+    </div>
+    <hr>
+    <div class="w-100 d-flex justify-content-between ">
+        <div></div>
+        <div></div>
+    </div>
 </x-app-layout>

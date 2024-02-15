@@ -24,7 +24,7 @@
 {{-- footer navbar --}}
 <nav class="navbar navbar-expand-lg bg-white position-static shadow-md d-none d-lg-flex py-0">
     <div class="container">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-center">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-center gap-2">
             @include('layouts.nav_items.nav_footer_items')
         </ul>
     </div>

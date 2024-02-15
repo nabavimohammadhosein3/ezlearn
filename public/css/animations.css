@@ -1,0 +1,56 @@
+:root{
+    --fade_trnaslate: 30%
+}
+
+@keyframes tada {
+    0% { transform: scale(1); }
+    10%, 20% { transform: scale(0.9) rotate(-3deg); }
+    30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+    40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes shakex {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes shakey {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(5px); }
+    50% { transform: translateY(-5px); }
+    75% { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+}
+
+.tada{
+    animation: tada 1s ease infinite;
+}
+
+.fade_in_right{
+    opacity: 0; 
+    transform: translateX(calc(var(--fade_trnaslate)*-1));
+}
+
+.fade_in_left{
+    opacity: 0; 
+    transform: translateX(var(--fade_trnaslate));
+}
+
+.fade_in_up{
+    opacity: 0; 
+    transform: translateY(var(--fade_trnaslate));
+}
+
+.fade_in_down{
+    opacity: 0; 
+    transform: translateY(calc(var(--fade_trnaslate)*-1));
+}
+
+.normal_anim{
+    opacity: 1; 
+    transform: translateX(0%);
+}

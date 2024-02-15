@@ -1,3 +1,3 @@
 <x-app-layout>
-    @include('package.list')
+    تماس با ما
 </x-app-layout>
